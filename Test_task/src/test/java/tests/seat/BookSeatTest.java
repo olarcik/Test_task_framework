@@ -1,9 +1,7 @@
 package tests.seat;
 
 import org.testng.annotations.Test;
-import pages.seat.SeatPage;
 import tests.base.BaseTest;
-
 import static common.Config.BOOK_DAY;
 import static common.Config.SEAT_LINK;
 
@@ -19,13 +17,13 @@ public class BookSeatTest extends BaseTest {
                 .clickOpenZTowerBtn()
                 .clickOpenOrangeKitchenBtn()
                 .clickToNextWeekBtn()
-                .clickToNeccesaryDate("")
+                .clickToNecessaryDate("")
                 .clickToGetPlaceBtn()
                 .clickToBookBtn()
                 .clickOpenZTowerBtn()
                 .clickOpenOrangeKitchenBtn()
                 .clickToNextWeekBtn()
-                .clickToNeccesaryDate(BOOK_DAY)
+                .clickToNecessaryDate(BOOK_DAY)
                 .assertResultAfterBookingPlace();
 
     }

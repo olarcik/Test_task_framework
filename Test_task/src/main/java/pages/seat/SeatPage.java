@@ -2,7 +2,6 @@ package pages.seat;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,9 +25,11 @@ public class SeatPage extends BasePage {
     private final By btnNext = By.xpath("//span[@class='icon next']");
     //private final By btnWithNextSaturday = By.xpath("//*[contains(@class, 'flatpickr-day active day-off') and contains(text(), '"+formattedDate+"')]");
     private final By checkedBox = By.xpath("//*[@title='Vladislav Olaru']");
+
     public SeatPage clickOpenBookingsBtn(){
 
         waitElementIsVisible(driver.findElement(openBookings));
+
         driver.findElement(openBookings).click();
 
         return this;
@@ -37,6 +38,7 @@ public class SeatPage extends BasePage {
     public SeatPage clickOpenZTowerBtn(){
 
         waitElementIsVisible(driver.findElement(openZTower));
+
         driver.findElement(openZTower).click();
 
         return this;
@@ -45,6 +47,7 @@ public class SeatPage extends BasePage {
     public SeatPage clickOpenOrangeKitchenBtn(){
 
         waitElementIsVisible(driver.findElement(openOrangeKitchen));
+
         driver.findElement(openOrangeKitchen).click();
 
         return this;
@@ -53,11 +56,12 @@ public class SeatPage extends BasePage {
     public SeatPage clickToNextWeekBtn(){
 
         waitElementIsVisible(driver.findElement(btnNext));
+
         driver.findElement(btnNext).click();
 
         return this;
     }
-    public SeatPage clickToNeccesaryDate(String book){
+    public SeatPage clickToNecessaryDate(String book){
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
@@ -73,8 +77,8 @@ public class SeatPage extends BasePage {
             formattedDate = formattedDate.substring(1);
         }
 
-
            waitElementIsVisible(driver.findElement(By.xpath("//*[contains(@class, 'flatpickr-day "+ book +"active day-off') and contains(text(), '"+formattedDate+"')]")));
+
            driver.findElement(By.xpath("//*[contains(@class, 'flatpickr-day "+ book +"active day-off') and contains(text(), '"+formattedDate+"')]")).click();
 
         return this;
@@ -83,6 +87,7 @@ public class SeatPage extends BasePage {
     public SeatPage clickToGetPlaceBtn(){
 
         waitElementIsVisible(driver.findElement(bookingPlace));
+
         driver.findElement(bookingPlace).click();
 
         return this;
@@ -92,8 +97,8 @@ public class SeatPage extends BasePage {
     public SeatPage clickToBookBtn(){
 
         waitElementIsClickable(driver.findElement(bookBtn));
-        driver.findElement(bookBtn).click();
 
+        driver.findElement(bookBtn).click();
         driver.navigate().refresh();
 
         return this;
@@ -102,6 +107,7 @@ public class SeatPage extends BasePage {
     public SeatPage assertResultAfterBookingPlace(){
 
         waitElementIsVisible(driver.findElement(bookingPlace));
+
         WebElement element = driver.findElement(checkedBox);
         boolean isVisible = element.isDisplayed();
 
@@ -112,6 +118,5 @@ public class SeatPage extends BasePage {
 
         return this;
     }
-
 
 }

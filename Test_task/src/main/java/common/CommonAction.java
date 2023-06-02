@@ -13,7 +13,6 @@ import static common.Config.PLATFORM_AND_BROWSER;
 
 public class CommonAction {
     private static WebDriver driver = null;
-
     private CommonAction(){
 
     }
